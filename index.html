@@ -1,0 +1,1790 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semana Santa Cali 2026 | Holy Week Cali 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f8faf9;
+        --surface: #ffffff;
+        --surface-day: #ffffff;
+        --text: #1a2e28;
+        --text-muted: #5a6e68;
+        --accent: #0d9488;
+        --accent-hover: #0f766e;
+        --accent-light: #ccfbf1;
+        --border: #e2e8e6;
+        --card-shadow: 0 2px 12px rgba(13, 148, 136, 0.08);
+        --radius: 14px;
+        --radius-sm: 10px;
+      }
+
+      [data-theme="dark"] {
+        --bg: #0f1419;
+        --surface: #1a2228;
+        --surface-day: #242d34;
+        --text: #e8edeb;
+        --text-muted: #9ca8a4;
+        --accent: #2dd4bf;
+        --accent-hover: #5eead4;
+        --accent-light: #134e4a;
+        --border: #2d3835;
+        --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        line-height: 1.5;
+        transition:
+          background 0.3s ease,
+          color 0.3s ease;
+      }
+
+      .container {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 1rem 1.25rem 2rem;
+      }
+
+      /* Header */
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 0 1.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--accent);
+        letter-spacing: -0.02em;
+      }
+
+      .controls {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .btn-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+
+      .btn-icon:hover {
+        background: var(--accent-light);
+        color: var(--accent);
+      }
+
+      .btn-icon:active {
+        transform: scale(0.96);
+      }
+
+      .btn-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* Hero */
+      .hero {
+        text-align: center;
+        padding: 1.75rem 0 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.5rem, 4vw, 1.75rem);
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 0.35rem;
+      }
+
+      .hero .subtitle {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+      }
+
+      .hero-budget {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--accent);
+        margin-top: 0.5rem;
+      }
+
+      /* Tabs */
+      .tabs {
+        display: flex;
+        gap: 0.25rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0;
+      }
+
+      .tab-btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        font-family: inherit;
+        color: var(--text-muted);
+        background: transparent;
+        border: none;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+        transition: color 0.2s, border-color 0.2s;
+        margin-bottom: -1px;
+      }
+
+      .tab-btn:hover {
+        color: var(--text);
+      }
+
+      .tab-btn.active {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+
+      .tab-panel {
+        display: block;
+      }
+
+      .tab-panel.hidden {
+        display: none !important;
+      }
+
+      /* Plan económico */
+      .economico-intro {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+      }
+
+      .economico-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .economico-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.25rem;
+        box-shadow: var(--card-shadow);
+      }
+
+      .economico-card h4 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 0.35rem;
+      }
+
+      .economico-card .economico-desc {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+        margin-bottom: 0.5rem;
+      }
+
+      .economico-card .economico-cost {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .day-detail-head .day-budget {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--accent);
+        margin-top: 0.35rem;
+      }
+
+      .activity-cost {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 0.25rem;
+      }
+
+      .modal-cost-line {
+        font-size: 0.9rem;
+        color: var(--text);
+        margin-bottom: 0.25rem;
+      }
+
+      .modal-cost-line strong {
+        color: var(--accent);
+      }
+
+      /* Calendar */
+      .calendar-section {
+        margin-bottom: 1.5rem;
+      }
+
+      .calendar-section h2 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .calendar-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0.6rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+        padding-bottom: 0.25rem;
+        margin: 0 -0.25rem;
+      }
+
+      .calendar-grid .day-card {
+        flex: 0 0 auto;
+        min-width: 72px;
+        scroll-snap-align: start;
+      }
+
+      @media (min-width: 480px) {
+        .calendar-grid {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          overflow: visible;
+          scroll-snap-type: none;
+          margin: 0;
+          padding-bottom: 0;
+        }
+
+        .calendar-grid .day-card {
+          min-width: unset;
+        }
+      }
+
+      @media (min-width: 640px) {
+        .calendar-grid {
+          grid-template-columns: repeat(9, 1fr);
+          gap: 0.75rem;
+        }
+      }
+
+      .day-card {
+        background: var(--surface);
+        border: 2px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 0.85rem 0.5rem;
+        text-align: center;
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          background 0.2s,
+          transform 0.15s;
+      }
+
+      [data-theme="dark"] .day-card {
+        background: var(--surface-day);
+      }
+
+      [data-theme="dark"] .day-card:hover {
+        background: #2d3a40;
+      }
+
+      .day-card:hover {
+        border-color: var(--accent);
+        background: var(--accent-light);
+      }
+
+      .day-card.active {
+        border-color: var(--accent);
+        background: var(--accent);
+        color: white;
+      }
+
+      .day-card .date-num {
+        font-size: 1.25rem;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 0.2rem;
+      }
+
+      .day-card .date-day {
+        font-size: 0.7rem;
+        opacity: 0.9;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+
+      .day-card.active .date-day {
+        opacity: 1;
+      }
+
+      /* Day detail */
+      .day-detail {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 1.25rem 1.25rem 1.5rem;
+        box-shadow: var(--card-shadow);
+        border: 1px solid var(--border);
+      }
+
+      .day-detail-head {
+        margin-bottom: 1.25rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .day-detail-head h3 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .day-detail-head .date-badge {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 0.25rem;
+      }
+
+      .activities-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+
+      .activity-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.75rem 1rem;
+        align-items: start;
+        padding: 0.9rem 1rem;
+        background: var(--bg);
+        border-radius: var(--radius-sm);
+        border-left: 3px solid var(--accent);
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .activity-item:hover {
+        transform: translateX(4px);
+        box-shadow: var(--card-shadow);
+      }
+
+      .activity-time {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--accent);
+        white-space: nowrap;
+      }
+
+      .activity-content {
+        min-width: 0;
+      }
+
+      .activity-content .title {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--text);
+      }
+
+      .activity-content .place {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 0.2rem;
+      }
+
+      .empty-state {
+        text-align: center;
+        padding: 2rem 1rem;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      .empty-state svg {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 0.75rem;
+        opacity: 0.6;
+      }
+
+      /* Modal */
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
+      }
+
+      .modal-backdrop.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-backdrop.is-open .modal-box {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .modal-box {
+        background: var(--surface);
+        border-radius: var(--radius);
+        max-width: 440px;
+        width: 100%;
+        max-height: 85vh;
+        overflow: hidden;
+        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--border);
+        transform: scale(0.9);
+        opacity: 0;
+        transition:
+          transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+          opacity 0.25s ease;
+      }
+
+      .modal-header {
+        padding: 1.25rem 1.25rem 0.75rem;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+
+      .modal-header h3 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--text);
+        line-height: 1.3;
+      }
+
+      .modal-close {
+        width: 36px;
+        height: 36px;
+        border: none;
+        background: var(--bg);
+        color: var(--text-muted);
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+
+      .modal-close:hover {
+        background: var(--accent-light);
+        color: var(--accent);
+      }
+
+      .modal-body {
+        padding: 1.25rem;
+        overflow-y: auto;
+        max-height: calc(85vh - 80px);
+      }
+
+      .modal-image-wrap {
+        margin-bottom: 1rem;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        background: var(--bg);
+      }
+
+      .modal-image-wrap img {
+        width: 100%;
+        height: auto;
+        display: block;
+        max-height: 220px;
+        object-fit: cover;
+      }
+
+      .modal-meta {
+        font-size: 0.85rem;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .modal-section {
+        margin-bottom: 1.25rem;
+      }
+
+      .modal-section:last-child {
+        margin-bottom: 0;
+      }
+
+      .modal-section-title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text-muted);
+        margin-bottom: 0.4rem;
+      }
+
+      .modal-section p {
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.55;
+      }
+
+      .modal-address a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      .modal-address a:hover {
+        text-decoration: underline;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 2rem 0 1rem;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <span class="logo" data-i18n="logo">Semana Santa · Cali 2026</span>
+        <div class="controls">
+          <button
+            type="button"
+            class="btn-icon"
+            id="themeToggle"
+            aria-label="Cambiar tema"
+          >
+            <svg
+              class="icon-sun"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+            <svg
+              class="icon-moon"
+              style="display: none"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="btn-icon"
+            id="langToggle"
+            aria-label="Cambiar idioma"
+          >
+            <span id="langLabel">EN</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <h1 data-i18n="title">Vacaciones en Cali</h1>
+        <p class="subtitle" data-i18n="subtitle">
+          27 de marzo — 4 de abril · Elige un día para ver el itinerario
+        </p>
+        <p class="hero-budget" id="heroBudget"></p>
+      </section>
+
+      <nav class="tabs" role="tablist">
+        <button type="button" class="tab-btn active" role="tab" id="tabActual" aria-selected="true" data-i18n="tabActual">Plan actual</button>
+        <button type="button" class="tab-btn" role="tab" id="tabEconomico" aria-selected="false" data-i18n="tabEconomico">Plan económico</button>
+      </nav>
+
+      <div class="tab-panel" id="panelActual" role="tabpanel">
+        <section class="calendar-section">
+          <h2 data-i18n="calendarLabel">Calendario</h2>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </section>
+
+        <section class="day-detail" id="dayDetail">
+          <div class="empty-state" id="emptyState">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            <p data-i18n="emptyHint">
+              Selecciona una fecha para ver los planes del día
+            </p>
+          </div>
+          <div id="dayContent" style="display: none">
+            <div class="day-detail-head">
+              <h3 id="dayTitle"></h3>
+              <span class="date-badge" id="dayDateBadge"></span>
+              <p class="day-budget" id="dayBudget"></p>
+            </div>
+            <div class="activities-list" id="activitiesList"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="tab-panel hidden" id="panelEconomico" role="tabpanel">
+        <p class="economico-intro" id="economicoIntro"></p>
+        <div class="economico-list" id="economicoList"></div>
+      </div>
+
+      <footer>
+        <p data-i18n="footer">Cali & Jamundí · Semana Santa 2026</p>
+      </footer>
+    </div>
+
+    <div class="modal-backdrop" id="activityModal" aria-hidden="true">
+      <div
+        class="modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <div class="modal-header">
+          <h3 id="modalTitle"></h3>
+          <button
+            type="button"
+            class="modal-close"
+            id="modalClose"
+            aria-label="Cerrar"
+            data-i18n-aria="modalClose"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-image-wrap" id="modalImageWrap" style="display: none;">
+            <img id="modalImage" src="" alt="" />
+          </div>
+          <p class="modal-meta" id="modalTime"></p>
+          <div class="modal-section modal-address" id="modalAddressWrap">
+            <div class="modal-section-title" data-i18n="modalAddress">
+              Dirección
+            </div>
+            <p id="modalAddress"></p>
+          </div>
+          <div class="modal-section">
+            <div class="modal-section-title" data-i18n="modalDescription">
+              Descripción
+            </div>
+            <p id="modalDescription"></p>
+          </div>
+          <div class="modal-section">
+            <div class="modal-section-title" data-i18n="modalTransport">
+              Tiempo de transporte
+            </div>
+            <p id="modalTransport"></p>
+          </div>
+          <div class="modal-section" id="modalCostWrap">
+            <div class="modal-section-title" data-i18n="costPlan">Costo aprox. plan</div>
+            <p class="modal-cost-line" id="modalCostPlan"></p>
+            <div class="modal-section-title" data-i18n="costTransport">Costo aprox. transporte</div>
+            <p class="modal-cost-line" id="modalCostTransport"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const itinerary = {
+        "2026-03-27": [
+          {
+            emoji: "✈️",
+            start: "05:30",
+            end: "06:45",
+            activity: {
+              es: "Vuelo Bogotá a Cali",
+              en: "Flight Bogotá to Cali",
+            },
+            place: "—",
+            city: "Aeropuerto",
+            address: "—",
+            mapsQuery: "Aeropuerto Alfonso Bonilla Aragón Cali",
+            description: {
+              es: "Vuelo desde Bogotá hacia Cali. Llegada al aeropuerto Alfonso Bonilla Aragón (CLO).",
+              en: "Flight from Bogotá to Cali. Arrival at Alfonso Bonilla Aragón airport (CLO).",
+            },
+            transport: {
+              es: "Traslado al aeropuerto El Dorado (Bogotá).",
+              en: "Transfer to El Dorado airport (Bogotá).",
+            },
+            cost: 0,
+            transportCost: 0,
+          },
+          {
+            emoji: "💻",
+            start: "09:00",
+            end: "17:00",
+            activity: { es: "Trabajo/Estudio remoto", en: "Remote work/study" },
+            place: "—",
+            city: "Cali",
+            address: "—",
+            mapsQuery: "",
+            description: {
+              es: "Día de trabajo o estudio desde Cali. Tiempo para instalarse y conectar después del vuelo.",
+              en: "Work or study day from Cali. Time to settle in and connect after the flight.",
+            },
+            transport: {
+              es: "Desde aeropuerto a alojamiento: ~25–35 min.",
+              en: "From airport to accommodation: ~25–35 min.",
+            },
+            cost: 0,
+            transportCost: 35000,
+          },
+          {
+            emoji: "🥟",
+            start: "18:00",
+            end: "19:30",
+            activity: {
+              es: "Empanadas (estilo San Gil)",
+              en: "Empanadas (San Gil style)",
+            },
+            place: "—",
+            city: "Cali",
+            address: "Puestos o locales de empanadas, Cali",
+            mapsQuery: "empanadas San Gil Cali",
+            description: {
+              es: "Comer empanadas al estilo San Gil: masa delgada y rellenos variados. Busca un puesto o local recomendado en la zona.",
+              en: "San Gil–style empanadas: thin dough and varied fillings. Find a recommended stall or spot nearby.",
+            },
+            transport: {
+              es: "Desde alojamiento en Cali: según zona.",
+              en: "From Cali accommodation: depends on area.",
+            },
+            cost: 15000,
+            transportCost: 15000,
+          },
+          {
+            emoji: "🌮",
+            start: "20:00",
+            end: "22:30",
+            activity: {
+              es: "Calle del Sabor y Bulevar del Río",
+              en: "Calle del Sabor & Bulevar del Río",
+            },
+            place: "Calle del Sabor / Bulevar del Río",
+            city: "Cali",
+            address: "Calle del Sabor y Bulevar del Río, centro, Cali",
+            mapsQuery: "Calle del Sabor Cali Bulevar del Río",
+            description: {
+              es: "Recorrido por la Calle del Sabor (oferta gastronómica) y el Bulevar del Río: paseo, luces y ambiente nocturno.",
+              en: "Stroll Calle del Sabor (food scene) and Bulevar del Río: walk, lights and evening vibe.",
+            },
+            transport: {
+              es: "Entre puntos del centro: a pie o corto trayecto.",
+              en: "Between downtown spots: on foot or short hop.",
+            },
+            cost: 25000,
+            transportCost: 10000,
+          },
+        ],
+        "2026-03-28": [
+          {
+            emoji: "🏋️",
+            start: "06:00",
+            end: "07:00",
+            activity: { es: "Gimnasio", en: "Gym" },
+            place: "—",
+            city: "Cali",
+            address: "—",
+            mapsQuery: "",
+            description: {
+              es: "Entrenamiento en gimnasio temprano antes del día.",
+              en: "Early gym session before the day.",
+            },
+            transport: {
+              es: "Según alojamiento.",
+              en: "Depends on accommodation.",
+            },
+            cost: 0,
+            transportCost: 0,
+          },
+          {
+            emoji: "🦁",
+            start: "09:00",
+            end: "12:00",
+            activity: { es: "Visita al zoológico", en: "Zoo visit" },
+            place: "Zoológico de Cali",
+            city: "Cali",
+            address: "Zoológico de Cali, Cl. 14 Oeste",
+            mapsQuery: "Zoológico de Cali Colombia",
+            description: {
+              es: "Uno de los zoológicos más importantes de Colombia. Recorrido por hábitats, animales nativos e internacionales y naturaleza.",
+              en: "One of the most important zoos in Colombia. Habitats, native and international animals and nature.",
+            },
+            transport: {
+              es: "Desde alojamiento en Cali: ~25 min.",
+              en: "From Cali accommodation: ~25 min.",
+            },
+            cost: 40000,
+            transportCost: 20000,
+            image: "images/zoologico-1.jpg",
+          },
+          {
+            emoji: "🥘",
+            start: "12:30",
+            end: "14:00",
+            activity: { es: "Almuerzo típico", en: "Traditional lunch" },
+            place: "El Zaguán",
+            city: "Cali",
+            address: "El Zaguán, Cali",
+            mapsQuery: "El Zaguán restaurante Cali",
+            description: {
+              es: "Almuerzo con comida típica valluna y ambiente acogedor. Ideal para probar sancocho, tamales o bandeja paisa.",
+              en: "Traditional Valle del Cauca lunch in a cozy setting. Try sancocho, tamales or bandeja paisa.",
+            },
+            transport: {
+              es: "Desde Zoológico de Cali: ~10 min.",
+              en: "From Cali Zoo: ~10 min.",
+            },
+            cost: 35000,
+            transportCost: 10000,
+            image: "images/el-zaguan-1.jpg",
+          },
+          {
+            emoji: "🏘️",
+            start: "14:30",
+            end: "17:30",
+            activity: {
+              es: "Recorrido por el barrio",
+              en: "Neighborhood tour",
+            },
+            place: "Barrio San Antonio",
+            city: "Cali",
+            address: "Barrio San Antonio, Cali",
+            mapsQuery: "Barrio San Antonio Cali",
+            description: {
+              es: "Paseo por el barrio más bohemio de Cali: galerías, cafés, artesanías, iglesia y vistas al río.",
+              en: "Walk through Cali's most bohemian neighborhood: galleries, cafés, crafts, church and river views.",
+            },
+            transport: {
+              es: "Desde El Zaguán: ~5 min.",
+              en: "From El Zaguán: ~5 min.",
+            },
+            cost: 15000,
+            transportCost: 5000,
+            image: "images/barrio-san-antonio-1.webp",
+          },
+          {
+            emoji: "🍧",
+            start: "20:00",
+            end: "23:30",
+            activity: {
+              es: "Cholados y cocteles",
+              en: "Cholados and cocktails",
+            },
+            place: "—",
+            city: "Jamundí",
+            address: "Zona de cholados / bares, Jamundí",
+            mapsQuery: "cholados Jamundí",
+            description: {
+              es: "Tarde-noche en Jamundí: cholados típicos y cocteles en un bar o local a elección.",
+              en: "Evening in Jamundí: typical cholados and cocktails at a bar or spot of your choice.",
+            },
+            transport: {
+              es: "Desde Cali a Jamundí: ~35–40 min.",
+              en: "From Cali to Jamundí: ~35–40 min.",
+            },
+            cost: 45000,
+            transportCost: 35000,
+          },
+        ],
+        "2026-03-29": [
+          {
+            emoji: "🌿",
+            start: "09:30",
+            end: "13:00",
+            activity: {
+              es: "Naturaleza en Río Pance",
+              en: "Nature at Río Pance",
+            },
+            place: "Río Pance",
+            city: "Cali",
+            address: "Río Pance, Pance, Cali",
+            mapsQuery: "Río Pance Cali",
+            description: {
+              es: "Día de naturaleza en el río Pance: senderos, charcos, paisaje verde y aire libre. Llevar traje de baño y protector solar.",
+              en: "Nature day at Río Pance: trails, swimming spots, green landscape and outdoors. Bring swimsuit and sunscreen.",
+            },
+            transport: {
+              es: "Desde Cali: ~40–50 min.",
+              en: "From Cali: ~40–50 min.",
+            },
+            cost: 5000,
+            transportCost: 35000,
+            image: "images/rio-pance-1.jpg",
+          },
+          {
+            emoji: "🍴",
+            start: "13:30",
+            end: "15:00",
+            activity: { es: "Almorzar", en: "Lunch" },
+            place: "—",
+            city: "Pance / zona",
+            address: "—",
+            mapsQuery: "",
+            description: {
+              es: "Almuerzo sencillo en la zona (Pance o alrededores). Presupuesto aproximado por persona.",
+              en: "Simple lunch in the area (Pance or nearby). Approx. budget per person.",
+            },
+            transport: {
+              es: "Desde Río Pance: según el lugar elegido.",
+              en: "From Río Pance: depends on chosen spot.",
+            },
+            cost: 20000,
+            transportCost: 5000,
+          },
+          {
+            emoji: "🎮",
+            start: "17:00",
+            end: "22:00",
+            activity: {
+              es: "Videojuegos, juegos de mesa, películas y series",
+              en: "Video games, board games, movies & shows",
+            },
+            place: "Alojamiento",
+            city: "Cali",
+            address: "—",
+            mapsQuery: "",
+            description: {
+              es: "Tarde-noche en casa: consola o PC, juegos de mesa, y tiempo para películas o series. Plan relajado sin salir.",
+              en: "Evening at home: console or PC, board games, plus movies or series. Chill night in.",
+            },
+            transport: {
+              es: "Sin desplazamiento.",
+              en: "No travel.",
+            },
+            cost: 0,
+            transportCost: 0,
+          },
+        ],
+        "2026-03-30": [
+          {
+            emoji: "🏋️",
+            start: "06:00",
+            end: "07:30",
+            activity: { es: "Gimnasio", en: "Gym" },
+            place: "—",
+            city: "Jamundí",
+            address: "—",
+            mapsQuery: "",
+            description: {
+              es: "Entrenamiento en gimnasio antes del trabajo remoto.",
+              en: "Gym session before remote work.",
+            },
+            transport: {
+              es: "Según alojamiento en Jamundí.",
+              en: "Depends on Jamundí accommodation.",
+            },
+            cost: 0,
+            transportCost: 0,
+          },
+          {
+            emoji: "💻",
+            start: "08:00",
+            end: "17:00",
+            activity: { es: "Trabajo/Estudio remoto", en: "Remote work/study" },
+            place: "—",
+            city: "Jamundí",
+            address: "—",
+            mapsQuery: "",
+            description: {
+              es: "Día de trabajo o estudio desde Jamundí. Conexión remota y descanso entre planes.",
+              en: "Work or study day from Jamundí. Remote connection and rest between plans.",
+            },
+            transport: {
+              es: "En Jamundí (sin desplazamiento).",
+              en: "In Jamundí (no travel).",
+            },
+            cost: 0,
+            transportCost: 0,
+          },
+        ],
+        "2026-03-31": [
+          {
+            emoji: "💻",
+            start: "08:00",
+            end: "17:00",
+            activity: { es: "Trabajo/Estudio remoto", en: "Remote work/study" },
+            place: "—",
+            city: "Jamundí",
+            address: "—",
+            mapsQuery: "",
+            description: {
+              es: "Día de trabajo o estudio desde Jamundí.",
+              en: "Work or study day from Jamundí.",
+            },
+            transport: {
+              es: "En Jamundí (sin desplazamiento).",
+              en: "In Jamundí (no travel).",
+            },
+            cost: 0,
+            transportCost: 0,
+          },
+          {
+            emoji: "🎶",
+            start: "19:00",
+            end: "23:30",
+            activity: { es: "Clase y rumba", en: "Class and rum" },
+            place: "Zaperoco",
+            city: "Cali",
+            address: "Zaperoco, Cali",
+            mapsQuery: "Zaperoco salsa Cali",
+            description: {
+              es: "Clase de salsa y rumba en Zaperoco. Aprende pasos y luego a ponerlos en práctica en la pista.",
+              en: "Salsa class and party at Zaperoco. Learn steps then hit the dance floor.",
+            },
+            transport: {
+              es: "Desde Jamundí: ~35–40 min.",
+              en: "From Jamundí: ~35–40 min.",
+            },
+            cost: 55000,
+            transportCost: 35000,
+          },
+        ],
+        "2026-04-01": [
+          {
+            emoji: "💻",
+            start: "08:00",
+            end: "17:00",
+            activity: { es: "Trabajo/Estudio remoto", en: "Remote work/study" },
+            place: "—",
+            city: "Jamundí",
+            address: "—",
+            mapsQuery: "",
+            description: {
+              es: "Día de trabajo o estudio desde Jamundí.",
+              en: "Work or study day from Jamundí.",
+            },
+            transport: {
+              es: "En Jamundí (sin desplazamiento).",
+              en: "In Jamundí (no travel).",
+            },
+            cost: 0,
+            transportCost: 0,
+          },
+          {
+            emoji: "🛍️",
+            start: "17:15",
+            end: "18:15",
+            activity: {
+              es: "Compras de recuerdos",
+              en: "Souvenir shopping",
+            },
+            place: "Centro / artesanías",
+            city: "Cali",
+            address: "Zona comercial centro o mercado de artesanías, Cali",
+            mapsQuery: "artesanías Cali centro",
+            description: {
+              es: "Tarde para comprar recuerdos: artesanías, dulces típicos o detalles para llevar a casa.",
+              en: "Afternoon for souvenirs: crafts, local sweets or gifts to take home.",
+            },
+            transport: {
+              es: "Desde Jamundí: ~35–40 min.",
+              en: "From Jamundí: ~35–40 min.",
+            },
+            cost: 80000,
+            transportCost: 35000,
+          },
+          {
+            emoji: "🎭",
+            start: "18:30",
+            end: "20:00",
+            activity: { es: "Visita cultural", en: "Cultural visit" },
+            place: "Teatro Municipal",
+            city: "Cali",
+            address: "Teatro Municipal, Cali",
+            mapsQuery: "Teatro Municipal Cali",
+            description: {
+              es: "Visita al Teatro Municipal de Cali. Arquitectura, historia y opción de ver función si hay programación.",
+              en: "Visit to Cali Municipal Theatre. Architecture, history and chance to catch a show if scheduled.",
+            },
+            transport: {
+              es: "Desde zona de compras en centro: ~10–15 min.",
+              en: "From downtown shopping area: ~10–15 min.",
+            },
+            cost: 20000,
+            transportCost: 10000,
+          },
+        ],
+        "2026-04-02": [
+          {
+            emoji: "🖼️",
+            start: "09:30",
+            end: "12:30",
+            activity: { es: "Ruta cultural", en: "Cultural route" },
+            place: "Museo La Tertulia",
+            city: "Cali",
+            address: "Museo La Tertulia, Av. Colombia",
+            mapsQuery: "Museo La Tertulia Cali",
+            description: {
+              es: "Museo de arte moderno y contemporáneo. Exposiciones, jardín de esculturas y vista al río.",
+              en: "Modern and contemporary art museum. Exhibitions, sculpture garden and river views.",
+            },
+            transport: {
+              es: "Desde alojamiento / Jamundí: ~35–40 min.",
+              en: "From accommodation / Jamundí: ~35–40 min.",
+            },
+            cost: 10000,
+            transportCost: 35000,
+          },
+          {
+            emoji: "🥗",
+            start: "13:00",
+            end: "14:30",
+            activity: { es: "Almuerzo", en: "Lunch" },
+            place: "Antigua Colonia",
+            city: "Cali",
+            address: "Antigua Colonia, Cali",
+            mapsQuery: "Antigua Colonia restaurante Cali",
+            description: {
+              es: "Almuerzo en un lugar con historia y buena cocina. Ambiente colonial y platos bien servidos.",
+              en: "Lunch in a place with history and good food. Colonial setting and solid dishes.",
+            },
+            transport: {
+              es: "Desde La Tertulia: ~10 min.",
+              en: "From La Tertulia: ~10 min.",
+            },
+            cost: 40000,
+            transportCost: 10000,
+          },
+          {
+            emoji: "🌅",
+            start: "17:00",
+            end: "18:30",
+            activity: { es: "Atardecer", en: "Sunset" },
+            place: "Tres Cruces",
+            city: "Cali",
+            address: "Tres Cruces, Cali",
+            mapsQuery: "Tres Cruces mirador Cali",
+            description: {
+              es: "Mirador de las Tres Cruces para ver el atardecer sobre Cali. Ideal para fotos y momento tranquilo.",
+              en: "Tres Cruces viewpoint for sunset over Cali. Great for photos and a calm moment.",
+            },
+            transport: {
+              es: "Desde Antigua Colonia: ~20–25 min.",
+              en: "From Antigua Colonia: ~20–25 min.",
+            },
+            cost: 0,
+            transportCost: 25000,
+          },
+        ],
+        "2026-04-03": [
+          {
+            emoji: "🏞️",
+            start: "09:30",
+            end: "13:00",
+            activity: { es: "Excursión", en: "Excursion" },
+            place: "Charco Escondido",
+            city: "Jamundí",
+            address: "Charco Escondido, Jamundí",
+            mapsQuery: "Charco Escondido Jamundí",
+            description: {
+              es: "Excursión a Charco Escondido: charcos naturales, senderos y naturaleza en Jamundí. Llevar traje de baño.",
+              en: "Trip to Charco Escondido: natural pools, trails and nature in Jamundí. Bring swimsuit.",
+            },
+            transport: {
+              es: "Desde Jamundí: ~25–30 min.",
+              en: "From Jamundí: ~25–30 min.",
+            },
+            cost: 10000,
+            transportCost: 20000,
+          },
+          {
+            emoji: "🍖",
+            start: "13:30",
+            end: "15:30",
+            activity: { es: "Asado", en: "BBQ" },
+            place: "Alojamiento",
+            city: "Jamundí",
+            address: "—",
+            mapsQuery: "",
+            description: {
+              es: "Asado en el alojamiento después de la excursión. Carne y acompañamientos a comprar en supermercado o carnicería.",
+              en: "BBQ at the accommodation after the excursion. Meat and sides from supermarket or butcher.",
+            },
+            transport: {
+              es: "En Jamundí (sin desplazamiento).",
+              en: "In Jamundí (no travel).",
+            },
+            cost: 35000,
+            transportCost: 0,
+          },
+          {
+            emoji: "🍧",
+            start: "16:30",
+            end: "18:00",
+            activity: { es: "Cholados", en: "Cholados" },
+            place: "Cholados El Rincón",
+            city: "Jamundí",
+            address: "Cholados El Rincón, Jamundí",
+            mapsQuery: "Cholados El Rincón Jamundí",
+            description: {
+              es: "Cholados típicos del Valle por la tarde. Postre frío con frutas y sabores locales (después del asado).",
+              en: "Typical Valle cholados in the late afternoon. Cold dessert with fruits and local flavours (after BBQ).",
+            },
+            transport: {
+              es: "Desde alojamiento en Jamundí: según ubicación.",
+              en: "From Jamundí accommodation: depends on location.",
+            },
+            cost: 15000,
+            transportCost: 15000,
+          },
+        ],
+        "2026-04-04": [
+          {
+            emoji: "✈️",
+            start: "06:15",
+            end: "07:20",
+            activity: {
+              es: "Vuelo Cali a Bogotá",
+              en: "Flight Cali to Bogotá",
+            },
+            place: "—",
+            city: "Aeropuerto",
+            address: "—",
+            mapsQuery: "Aeropuerto Alfonso Bonilla Aragón Cali",
+            description: {
+              es: "Vuelo desde Cali hacia Bogotá. Salida desde el aeropuerto Alfonso Bonilla Aragón (CLO), llegada a El Dorado.",
+              en: "Flight from Cali to Bogotá. Departure from Alfonso Bonilla Aragón airport (CLO), arrival at El Dorado.",
+            },
+            transport: {
+              es: "Desde Jamundí al aeropuerto CLO: ~35–45 min.",
+              en: "From Jamundí to CLO airport: ~35–45 min.",
+            },
+            cost: 0,
+            transportCost: 0,
+          },
+        ],
+      };
+
+      const dayNames = {
+        es: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+        en: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      };
+
+      const i18n = {
+        es: {
+          logo: "Semana Santa · Cali 2026",
+          title: "Vacaciones en Cali",
+          subtitle:
+            "27 de marzo — 4 de abril · Elige un día para ver el itinerario",
+          calendarLabel: "Calendario",
+          emptyHint: "Selecciona una fecha para ver los planes del día",
+          footer: "Cali & Jamundí · Semana Santa 2026",
+          modalAddress: "Dirección",
+          modalDescription: "Descripción",
+          modalTransport: "Tiempo de transporte",
+          modalViewMaps: "Ver en Google Maps",
+          modalClose: "Cerrar",
+          budgetTotal: "Presupuesto aprox. total (por persona):",
+          budgetDay: "Presupuesto aprox. del día (por persona):",
+          costPlan: "Costo aprox. plan",
+          costTransport: "Costo aprox. transporte",
+          perPerson: "por persona",
+          tabActual: "Plan actual",
+          tabEconomico: "Plan económico",
+          economicoIntro: "Opciones más económicas para sustituir o combinar con el plan. El alojamiento cuenta con piscina y espacio para disfrutar en casa.",
+          economicoPerPerson: "por persona (aprox.)",
+        },
+        en: {
+          logo: "Holy Week · Cali 2026",
+          title: "Vacation in Cali",
+          subtitle: "March 27 — April 4 · Pick a day to see the itinerary",
+          calendarLabel: "Calendar",
+          emptyHint: "Select a date to see the plans for that day",
+          footer: "Cali & Jamundí · Holy Week 2026",
+          modalAddress: "Address",
+          modalDescription: "Description",
+          modalTransport: "Transport time",
+          modalViewMaps: "View on Google Maps",
+          modalClose: "Close",
+          budgetTotal: "Approx. total budget (per person):",
+          budgetDay: "Approx. day budget (per person):",
+          costPlan: "Approx. plan cost",
+          costTransport: "Approx. transport cost",
+          perPerson: "per person",
+          tabActual: "Current plan",
+          tabEconomico: "Budget plan",
+          economicoIntro: "Cheaper options to replace or combine with the plan. The accommodation has a pool and space to enjoy at home.",
+          economicoPerPerson: "per person (approx.)",
+        },
+      };
+
+      const economicoPlans = [
+        {
+          emoji: "🏊",
+          title: { es: "Plan piscina", en: "Pool day" },
+          description: { es: "Día de piscina en el alojamiento. Sin costo extra, ideal para relajarse y tomar el sol.", en: "Pool day at the accommodation. No extra cost, ideal to relax and sunbathe." },
+          cost: 0,
+        },
+        {
+          emoji: "🍖",
+          title: { es: "Plan asado", en: "BBQ plan" },
+          description: { es: "Asado en el alojamiento. Comprar carne y acompañamientos en el supermercado y preparar en la casa.", en: "BBQ at the accommodation. Buy meat and sides at the supermarket and grill at home." },
+          cost: 25000,
+        },
+        {
+          emoji: "🎬",
+          title: { es: "Plan cine", en: "Movie plan" },
+          description: { es: "Noche de cine en casa con snacks, o salir a cine de barrio (más económico que multiplex).", en: "Movie night at home with snacks, or go to a local cinema (cheaper than multiplex)." },
+          cost: 15000,
+        },
+        {
+          emoji: "🏠",
+          title: { es: "Día en el alojamiento", en: "Day at accommodation" },
+          description: { es: "Descansar, trabajar o estudiar, usar la piscina y cocinar en casa. Cero transporte.", en: "Rest, work or study, use the pool and cook at home. Zero transport." },
+          cost: 0,
+        },
+        {
+          emoji: "🎲",
+          title: { es: "Juegos de mesa / noche en casa", en: "Board games / night in" },
+          description: { es: "Tarde o noche con juegos de mesa, música y algo para picar. Plan tranquilo y económico.", en: "Afternoon or evening with board games, music and snacks. Calm and cheap plan." },
+          cost: 10000,
+        },
+        {
+          emoji: "🧺",
+          title: { es: "Picnic en parque o río", en: "Park or river picnic" },
+          description: { es: "Llevar sándwiches, fruta y bebidas a un parque o cerca del río. Alternativa económica al restaurante.", en: "Bring sandwiches, fruit and drinks to a park or by the river. Cheap alternative to restaurants." },
+          cost: 15000,
+        },
+      ];
+
+      const dates = [
+        "2026-03-27",
+        "2026-03-28",
+        "2026-03-29",
+        "2026-03-30",
+        "2026-03-31",
+        "2026-04-01",
+        "2026-04-02",
+        "2026-04-03",
+        "2026-04-04",
+      ];
+
+      let lang = localStorage.getItem("lang") || "es";
+      let theme = localStorage.getItem("theme") || "light";
+
+      function formatCost(n) {
+        if (n == null || n === 0) return "—";
+        return "$" + Number(n).toLocaleString("es-CO") + " COP";
+      }
+
+      function getTotalBudget() {
+        let total = 0;
+        dates.forEach((dateStr) => {
+          (itinerary[dateStr] || []).forEach((a) => {
+            total += (a.cost || 0) + (a.transportCost || 0);
+          });
+        });
+        return total;
+      }
+
+      function getDayTotal(dateStr) {
+        const activities = itinerary[dateStr];
+        if (!activities) return 0;
+        return activities.reduce(
+          (sum, a) => sum + (a.cost || 0) + (a.transportCost || 0),
+          0
+        );
+      }
+
+      function applyTheme() {
+        document.documentElement.setAttribute(
+          "data-theme",
+          theme === "dark" ? "dark" : "",
+        );
+        const iconSun = document.querySelector(".icon-sun");
+        const iconMoon = document.querySelector(".icon-moon");
+        if (theme === "dark") {
+          if (iconSun) iconSun.style.display = "none";
+          if (iconMoon) iconMoon.style.display = "block";
+        } else {
+          if (iconSun) iconSun.style.display = "block";
+          if (iconMoon) iconMoon.style.display = "none";
+        }
+      }
+
+      function applyLang() {
+        closeModal();
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (i18n[lang] && i18n[lang][key]) el.textContent = i18n[lang][key];
+        });
+        document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+          const key = el.getAttribute("data-i18n-aria");
+          if (i18n[lang] && i18n[lang][key])
+            el.setAttribute("aria-label", i18n[lang][key]);
+        });
+        document.getElementById("langLabel").textContent =
+          lang === "es" ? "EN" : "ES";
+        const heroBudgetEl = document.getElementById("heroBudget");
+        if (heroBudgetEl) {
+          heroBudgetEl.textContent =
+            (i18n[lang].budgetTotal || "") + " " + formatCost(getTotalBudget());
+        }
+        renderCalendar();
+        const selected = document.querySelector(".day-card.active");
+        if (selected) showDay(selected.dataset.date);
+        renderEconomico();
+      }
+
+      function switchTab(panelId) {
+        document.querySelectorAll(".tab-panel").forEach((p) => p.classList.add("hidden"));
+        document.querySelectorAll(".tab-btn").forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+        });
+        const panel = document.getElementById(panelId === "economico" ? "panelEconomico" : "panelActual");
+        const btn = document.getElementById(panelId === "economico" ? "tabEconomico" : "tabActual");
+        if (panel) panel.classList.remove("hidden");
+        if (btn) {
+          btn.classList.add("active");
+          btn.setAttribute("aria-selected", "true");
+        }
+      }
+
+      function renderEconomico() {
+        const intro = document.getElementById("economicoIntro");
+        const list = document.getElementById("economicoList");
+        if (intro) intro.textContent = i18n[lang].economicoIntro || "";
+        if (!list) return;
+        list.innerHTML = economicoPlans
+          .map(
+            (p) => `
+          <div class="economico-card">
+            <h4>${p.emoji} ${p.title[lang]}</h4>
+            <p class="economico-desc">${p.description[lang]}</p>
+            <p class="economico-cost">${formatCost(p.cost)} ${i18n[lang].economicoPerPerson || ""}</p>
+          </div>
+        `
+          )
+          .join("");
+      }
+
+      function renderCalendar() {
+        const grid = document.getElementById("calendarGrid");
+        grid.innerHTML = dates
+          .map((dateStr) => {
+            const d = new Date(dateStr + "T12:00:00");
+            const num = d.getDate();
+            const dayName = dayNames[lang][d.getDay()];
+            return `<button type="button" class="day-card" data-date="${dateStr}" aria-label="${dateStr}">
+          <span class="date-num">${num}</span>
+          <span class="date-day">${dayName}</span>
+        </button>`;
+          })
+          .join("");
+
+        grid.querySelectorAll(".day-card").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            grid
+              .querySelectorAll(".day-card")
+              .forEach((c) => c.classList.remove("active"));
+            btn.classList.add("active");
+            showDay(btn.dataset.date);
+          });
+        });
+      }
+
+      function showDay(dateStr) {
+        const activities = itinerary[dateStr];
+        const emptyState = document.getElementById("emptyState");
+        const dayContent = document.getElementById("dayContent");
+
+        if (!activities || activities.length === 0) {
+          emptyState.style.display = "block";
+          dayContent.style.display = "none";
+          return;
+        }
+
+        emptyState.style.display = "none";
+        dayContent.style.display = "block";
+
+        const d = new Date(dateStr + "T12:00:00");
+        const dayNamesFull = {
+          es: [
+            "Domingo",
+            "Lunes",
+            "Martes",
+            "Miércoles",
+            "Jueves",
+            "Viernes",
+            "Sábado",
+          ],
+          en: [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ],
+        };
+        const months = {
+          es: [
+            "enero",
+            "febrero",
+            "marzo",
+            "abril",
+            "mayo",
+            "junio",
+            "julio",
+            "agosto",
+            "septiembre",
+            "octubre",
+            "noviembre",
+            "diciembre",
+          ],
+          en: [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ],
+        };
+
+        document.getElementById("dayTitle").textContent =
+          dayNamesFull[lang][d.getDay()];
+        document.getElementById("dayDateBadge").textContent =
+          `${d.getDate()} ${months[lang][d.getMonth()]} ${d.getFullYear()}`;
+        const dayBudgetEl = document.getElementById("dayBudget");
+        if (dayBudgetEl) {
+          dayBudgetEl.textContent =
+            (i18n[lang].budgetDay || "") + " " + formatCost(getDayTotal(dateStr));
+        }
+
+        const list = document.getElementById("activitiesList");
+        list.innerHTML = activities
+          .map(
+            (a, i) => `
+        <div class="activity-item" data-date="${dateStr}" data-index="${i}" role="button" tabindex="0">
+          <span class="activity-time">${a.start} – ${a.end}</span>
+          <div class="activity-content">
+            <div class="title">${a.emoji || "📍"} ${a.activity[lang]}</div>
+            <div class="place">${a.place !== "—" ? a.place + " · " : ""}${a.city}</div>
+            <div class="activity-cost">${formatCost(a.cost)} ${(a.cost != null && a.cost > 0) ? (i18n[lang].perPerson || "por persona") : ""}</div>
+          </div>
+        </div>
+      `,
+          )
+          .join("");
+
+        list.querySelectorAll(".activity-item").forEach((el) => {
+          el.addEventListener("click", () =>
+            openModal(dateStr, parseInt(el.dataset.index, 10)),
+          );
+          el.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              openModal(dateStr, parseInt(el.dataset.index, 10));
+            }
+          });
+        });
+      }
+
+      function openModal(dateStr, index) {
+        const activities = itinerary[dateStr];
+        if (!activities || !activities[index]) return;
+        const a = activities[index];
+        const modal = document.getElementById("activityModal");
+        const mapsUrl = a.mapsQuery
+          ? "https://www.google.com/maps/search/?api=1&query=" +
+            encodeURIComponent(a.mapsQuery)
+          : "";
+
+        document.getElementById("modalTitle").textContent =
+          (a.emoji || "") + " " + a.activity[lang];
+        document.getElementById("modalTime").textContent =
+          a.start +
+          " – " +
+          a.end +
+          (a.place !== "—" ? " · " + a.place + ", " + a.city : " · " + a.city);
+
+        const imageWrap = document.getElementById("modalImageWrap");
+        const modalImg = document.getElementById("modalImage");
+        if (a.image && imageWrap && modalImg) {
+          modalImg.src = a.image;
+          modalImg.alt = a.place !== "—" ? a.place + ", " + a.city : a.activity[lang];
+          imageWrap.style.display = "block";
+        } else if (imageWrap) {
+          imageWrap.style.display = "none";
+          if (modalImg) modalImg.removeAttribute("src");
+        }
+
+        const addrWrap = document.getElementById("modalAddressWrap");
+        if (a.address && a.address !== "—" && mapsUrl) {
+          addrWrap.style.display = "block";
+          document.getElementById("modalAddress").innerHTML =
+            '<a href="' +
+            mapsUrl +
+            '" target="_blank" rel="noopener">' +
+            (a.place !== "—" ? a.place + ", " + a.city : a.address) +
+            " · " +
+            (i18n[lang].modalViewMaps || "Ver en Google Maps") +
+            "</a>";
+        } else if (a.address && a.address !== "—") {
+          addrWrap.style.display = "block";
+          document.getElementById("modalAddress").textContent = a.address;
+        } else {
+          addrWrap.style.display = "none";
+        }
+
+        document.getElementById("modalDescription").textContent =
+          a.description[lang];
+        document.getElementById("modalTransport").textContent =
+          a.transport[lang];
+
+        const costWrap = document.getElementById("modalCostWrap");
+        if (costWrap) {
+          costWrap.style.display = "block";
+          document.getElementById("modalCostPlan").innerHTML =
+            "<strong>" + formatCost(a.cost) + "</strong> " + (i18n[lang].perPerson || "por persona");
+          document.getElementById("modalCostTransport").innerHTML =
+            "<strong>" + formatCost(a.transportCost) + "</strong> " + (i18n[lang].perPerson || "por persona");
+        }
+        document.querySelectorAll("#modalCostWrap .modal-section-title").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (key && i18n[lang][key]) el.textContent = i18n[lang][key];
+        });
+
+        document.querySelectorAll(".modal-section-title").forEach((el, i) => {
+          const key = el.getAttribute("data-i18n");
+          if (key && i18n[lang][key]) el.textContent = i18n[lang][key];
+        });
+
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        requestAnimationFrame(() => modal.classList.add("is-open"));
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("activityModal");
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      document
+        .getElementById("modalClose")
+        .addEventListener("click", closeModal);
+      document
+        .getElementById("activityModal")
+        .addEventListener("click", (e) => {
+          if (e.target === e.currentTarget) closeModal();
+        });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+
+      document.getElementById("tabActual").addEventListener("click", () => switchTab("actual"));
+      document.getElementById("tabEconomico").addEventListener("click", () => switchTab("economico"));
+
+      document.getElementById("themeToggle").addEventListener("click", () => {
+        theme = theme === "light" ? "dark" : "light";
+        localStorage.setItem("theme", theme);
+        applyTheme();
+      });
+
+      document.getElementById("langToggle").addEventListener("click", () => {
+        lang = lang === "es" ? "en" : "es";
+        localStorage.setItem("lang", lang);
+        applyLang();
+      });
+
+      applyTheme();
+      applyLang();
+    </script>
+  </body>
+</html>
