@@ -134,6 +134,25 @@
         color: var(--text-muted);
       }
 
+      .hero-spreadsheet {
+        margin-top: 0.75rem;
+      }
+
+      .hero-spreadsheet a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .hero-spreadsheet a:hover {
+        opacity: 0.88;
+      }
+
       .hero-budget {
         font-size: 0.9rem;
         font-weight: 600;
@@ -651,6 +670,15 @@
         <p class="subtitle" data-i18n="subtitle">
           27 de marzo — 4 de abril · Elige un día para ver el itinerario
         </p>
+        <div class="hero-spreadsheet">
+          <a
+            href="https://docs.google.com/spreadsheets/d/1hNF3b_BZ0EBL2oMyOoWAyibianrMuw4p38dB8Sqftgo/edit?gid=1899541070#gid=1899541070"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="spreadsheetLink"
+            data-i18n-aria="spreadsheetLinkAria"
+            >Excel de Cuentas y Gastos</a>
+        </div>
         <p class="hero-budget" id="heroBudget"></p>
       </section>
 
@@ -1358,6 +1386,9 @@
           modalTransport: "Tiempo de transporte",
           modalViewMaps: "Ver en Google Maps",
           modalClose: "Cerrar",
+          spreadsheetLink: "Excel de Cuentas y Gastos",
+          spreadsheetLinkAria:
+            "Abrir hoja de Cuentas y Gastos en Google Sheets (se abre en pestaña nueva)",
           budgetTotal: "Presupuesto aprox. total (por persona):",
           budgetDay: "Presupuesto aprox. del día (por persona):",
           costPlan: "Costo aprox. plan",
@@ -1380,6 +1411,9 @@
           modalTransport: "Transport time",
           modalViewMaps: "View on Google Maps",
           modalClose: "Close",
+          spreadsheetLink: "Accounts & expenses spreadsheet",
+          spreadsheetLinkAria:
+            "Open Accounts & expenses sheet in Google Sheets (opens in new tab)",
           budgetTotal: "Approx. total budget (per person):",
           budgetDay: "Approx. day budget (per person):",
           costPlan: "Approx. plan cost",
